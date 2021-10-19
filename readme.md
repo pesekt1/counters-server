@@ -1,11 +1,5 @@
 # Node Express demo
 
-## Branches:
-
-- hello-world
-- counters-apis
-- counters-database
-
 ## Connecting to MySQL
 
 - db config:
