@@ -35,7 +35,7 @@ app.delete("/api/counters", (req, res) => {
 });
 
 app.delete("/api/counters/:id", (req, res) => {
-  let deletedCounter = counters.find((c) => c.id === req.params.id);
+  let deletedCounter = counters.find((c) => c.id == req.params.id);
   const index = counters.indexOf(deletedCounter);
   counters.splice(index, 1);
   res.send(deletedCounter);
