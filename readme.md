@@ -1,13 +1,5 @@
 # Node Express demo
 
-## Branches:
-
-- hello-world
-- counters-apis
-- counters-database
-- counters-database-cloud
-- ES6-syntax
-
 ## ES6 syntax
 
 Node 14 supports ES6 syntax so that we can use the same syntax for the backend and for the frontend.
