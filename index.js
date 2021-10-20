@@ -18,14 +18,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-let counters = [
-  { id: 1, value: 0, liked: false },
-  { id: 2, value: 0, liked: false },
-  { id: 3, value: 0, liked: false },
-  { id: 4, value: 0, liked: false },
-];
-
-//API with fake data - mocking the database
 app.get("/api/counters", (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   Counter.findAll()
@@ -35,7 +27,7 @@ app.get("/api/counters", (req, res) => {
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials.",
+          err.message || "Some error occurred while retrieving counters.",
       });
     });
 });
@@ -80,7 +72,6 @@ app.delete("/api/counters/:id", (req, res) => {
 });
 
 app.post("/api/counters", (req, res) => {
-  // Create a Tutorial
   const counter = {
     value: 0,
     liked: 0,
