@@ -1,19 +1,19 @@
 import express from "express";
 import cors from "cors";
 import db from "./models/index.js";
+import config from "config";
 
 const Counter = db.counters;
 const app = express();
-
 //cross origin allowed
-app.use(cors());
+app.use(cors({ origin: config.get("origin") }));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 app.get("/api/counters", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  //res.header("Access-Control-Allow-Origin", "*");
   Counter.findAll()
     .then((data) => {
       res.send(data);
