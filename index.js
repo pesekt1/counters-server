@@ -1,12 +1,19 @@
 import express from "express";
 import cors from "cors";
 import db from "./models/index.js";
+import bodyParser from "body-parser";
 
 const Counter = db.counters;
 const app = express();
 
 //cross origin allowed
 app.use(cors());
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
