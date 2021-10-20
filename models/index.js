@@ -1,10 +1,11 @@
-const dbConfig = require("../db_config/db.config.js");
-const Sequelize = require("sequelize");
-const config = require("config");
+import dbConfig from "../db_config/db.config.js";
+import Sequelize from "sequelize";
+import config from "config";
+import countersModel from "./counter.model.js";
+
 const db_config = config.get("mysql_db");
 
 const sequelize = new Sequelize(db_config, {
-  dialect: dbConfig.dialect,
   operatorsAliases: false,
 
   pool: {
@@ -20,6 +21,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.counters = require("./counter.model.js")(sequelize, Sequelize);
+db.counters = countersModel(sequelize, Sequelize);
 
-module.exports = db;
+export default db;

@@ -1,15 +1,9 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const db = require("./models");
+import express from "express";
+import cors from "cors";
+import db from "./models/index.js";
+
 const Counter = db.counters;
-
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// parse application/json
-app.use(bodyParser.json());
+const app = express();
 
 //cross origin allowed
 app.use(cors());

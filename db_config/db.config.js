@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   pool: {
     max: 5,
     min: 0,
