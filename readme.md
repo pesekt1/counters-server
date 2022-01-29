@@ -26,11 +26,3 @@ index.js: dynamically set CORS of the frontend app:
 //cross origin allowed
 app.use(cors({ origin: config.get("origin") }));
 ```
-
-```javascript
-
-```
-
-```javascript
-
-```
