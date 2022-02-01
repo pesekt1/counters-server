@@ -2,6 +2,12 @@
 
 ## Connecting to MySQL
 
+isntall dependencies:
+```
+yarn add sequelize
+yarn add mysql2
+```
+
 - db config:
 ```javascript
 module.exports = {
