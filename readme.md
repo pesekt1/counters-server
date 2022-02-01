@@ -2,10 +2,12 @@
 
 ## Connecting to MySQL
 
-isntall dependencies:
+install dependencies:
 ```
 yarn add sequelize
 yarn add mysql2
+yarn add cors
+yarn add config
 ```
 
 - db config:
