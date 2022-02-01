@@ -25,7 +25,7 @@ module.exports = {
 };
 ```
 
-- models:
+- models/counter.model.js:
 ```javascript
 module.exports = (sequelize, Sequelize) => {
   return sequelize.define(
@@ -41,8 +41,10 @@ module.exports = (sequelize, Sequelize) => {
     { createdAt: false, updatedAt: false }
   );
 };
-
 ```
+
+We set createAt and updateAt to false because we dont want to have it in the database schema.
+
 
 - models/index.js: setting up the db object
 ```javascript
